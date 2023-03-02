@@ -17,11 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadButton2: UIButton!
     @IBOutlet weak var loadButton3: UIButton!
     @IBOutlet weak var loadButton4: UIButton!
+    @IBOutlet weak var allLoadButton: UIButton!
     var buttons: [UIButton]!
     var imageViews: [UIImageView]!
     
-    let imageLinks = ["https://images.unsplash.com/photo-1675831903577-6bb42207699f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NzcyNjM0Mg&ixlib=rb-4.0.3&q=80&w=1080", "https://images.unsplash.com/photo-1675868128582-ad1f18166670?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NzcyNjM4MQ&ixlib=rb-4.0.3&q=80&w=1080", "https://images.unsplash.com/photo-1677169817064-ba8f0209a80e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NzcyNjM4Mg&ixlib=rb-4.0.3&q=80&w=1080", "https://images.unsplash.com/photo-1675171882268-ad1adf1223dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NzcyNjQ2MA&ixlib=rb-4.0.3&q=80&w=1080"
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +60,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func allLoadButtonTapped(_ sender: UIButton) {
+        sender.isEnabled = false
+        sender.configuration?.showsActivityIndicator = true
         buttons.forEach {
             $0.isEnabled = false
             $0.configuration?.showsActivityIndicator = true
@@ -75,11 +76,15 @@ class ViewController: UIViewController {
                     $0.isEnabled = true
                     $0.configuration?.showsActivityIndicator = false
                 }
+                sender.isEnabled = true
+                sender.configuration?.showsActivityIndicator = false
             } catch {
                 buttons.forEach {
                     $0.isEnabled = true
                     buttons[sender.tag].configuration?.showsActivityIndicator = false
                 }
+                sender.isEnabled = true
+                sender.configuration?.showsActivityIndicator = false
             }
         }
         
@@ -103,7 +108,6 @@ class ViewController: UIViewController {
     }
     
     func downloadImage(id: Int) async throws -> UIImage {
-//        guard let url = URL(string: imageLinks[id]) else { throw ErrorLiteral.HttpError.invalidURL }
         guard let url = URL(string: "https://source.unsplash.com/random/\(id)") else { throw ErrorLiteral.HttpError.invalidURL}
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: url))
         guard let httpStatusCode = response as? HTTPURLResponse else { throw ErrorLiteral.HttpError.invalidHttpResponse}
