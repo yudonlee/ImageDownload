@@ -13,6 +13,8 @@
 		769623C429B0339F00748912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769623C229B0339F00748912 /* Main.storyboard */; };
 		769623C629B033A100748912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 769623C529B033A100748912 /* Assets.xcassets */; };
 		769623C929B033A100748912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769623C729B033A100748912 /* LaunchScreen.storyboard */; };
+		769B5DD829B81B970027FC28 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B5DD729B81B970027FC28 /* UpgradeViewController.swift */; };
+		769B5DDA29B81C0F0027FC28 /* ImageDownloadUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B5DD929B81C0F0027FC28 /* ImageDownloadUnitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		769623C529B033A100748912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		769623C829B033A100748912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		769623CA29B033A100748912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		769B5DD729B81B970027FC28 /* UpgradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
+		769B5DD929B81C0F0027FC28 /* ImageDownloadUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadUnitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				769623BC29B0339F00748912 /* AppDelegate.swift */,
 				769623BE29B0339F00748912 /* SceneDelegate.swift */,
 				769623C029B0339F00748912 /* ViewController.swift */,
+				769B5DD729B81B970027FC28 /* UpgradeViewController.swift */,
+				769B5DD929B81C0F0027FC28 /* ImageDownloadUnitView.swift */,
 				769623C229B0339F00748912 /* Main.storyboard */,
 				769623C529B033A100748912 /* Assets.xcassets */,
 				769623C729B033A100748912 /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				769623C129B0339F00748912 /* ViewController.swift in Sources */,
+				769B5DD829B81B970027FC28 /* UpgradeViewController.swift in Sources */,
 				769623BD29B0339F00748912 /* AppDelegate.swift in Sources */,
 				769623BF29B0339F00748912 /* SceneDelegate.swift in Sources */,
+				769B5DDA29B81C0F0027FC28 /* ImageDownloadUnitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
